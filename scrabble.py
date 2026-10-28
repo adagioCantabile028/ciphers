@@ -1,3 +1,5 @@
+import cleanup
+
 alphabet = keystring = list('abcdefghijklmnopqrstuvwxyz')
 
 def shuffle(key,char):
@@ -26,8 +28,8 @@ def encrypt(keyword,plaintext,option):
 if __name__ == '__main__':
     print('Welcome to the scrabble cipher encoder/decoder!')
     print()
-    plaintext = input('Enter your message: ')
-    keyword = input('Enter your keyword: ')
+    plaintext = cleanup.clean(input('Enter your message: '))
+    keyword = cleanup.clean(input('Enter your keyword: '))
     option = input('Enter e for encrypt or d for decrypt: ')
     print()
     print(encrypt(keyword,plaintext,option))
